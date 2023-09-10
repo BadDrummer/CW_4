@@ -1,7 +1,11 @@
+import os
+
 import requests
+import dotenv
 
 from abc import ABC, abstractmethod
-SJ_token = 'v3.r.137783818.e3545af96c738f8122b6ee5746a30d3c81d0b2a6.6eb35ada079989ab14c658d5f099b682f137ed92'
+
+dotenv.load_dotenv()
 
 
 class BaseEngine(ABC):
@@ -32,7 +36,7 @@ class SJEngine(BaseEngine):
 
     def get_vacancies(self, keyword):
         headers = {
-            'X-Api-App-Id': SJ_token
+            'X-Api-App-Id': os.environ.get('SJ_token')
         }
 
         params = {
