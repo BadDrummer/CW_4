@@ -31,10 +31,16 @@ class Vacancy:
         return self._salary > other._salary
 
     def __str__(self):
-        return f'(id вакансии: {self._pk}\
-        название вакансии: {self._name}\
-        URL вакансии: {self._url}\
-        зарплата: {self._salary})'
+        if self._salary is None:
+            return f'(id вакансии: {self._pk}\
+    название вакансии: {self._name}\
+    URL вакансии: {self._url}\
+    зарплата: не указана)'
+        else:
+            return f'(id вакансии: {self._pk}\
+    название вакансии: {self._name}\
+    URL вакансии: {self._url}\
+    зарплата: {self._salary})'
 
 
 if __name__ == '__main__':
