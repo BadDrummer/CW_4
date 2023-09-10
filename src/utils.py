@@ -21,7 +21,7 @@ def get_hh_vacancies(worker):
         name = vac_data['name']
         url = vac_data['alternate_url']
         if vac_data['salary']:
-            salary = vac_data['salary']
+            salary = vac_data['salary']['from']
         else:
             salary = None
         vacancy = Vacancy(pk, name, url, salary)
