@@ -60,6 +60,7 @@ if __name__ == '__main__':
             else:
                 print('Ошибка ввода, значение должно быть 1 или 2 ')
                 continue
+        else:
             print('Ошибка ввода, значение должно быть 1 или 2')
             continue
 
@@ -82,4 +83,7 @@ if __name__ == '__main__':
             print('Ошибка ввода, значение должно быть 1 или 2')
             continue
 
+        print('Список ваших вакансий:')
+        for vacancy in sorted_vacancies:
+            print(vacancy)
         break
